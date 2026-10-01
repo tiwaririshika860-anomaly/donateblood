@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Blood</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-color: #fff5f5;
+        }
+
+        header {
+            background-color: #b30000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+            color: #b30000;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 13px;
+            background-color: #b30000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #800000;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #fff0f0;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #b30000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🩸 Blood & Plasma Connect</h1>
+</header>
+
+<div class="container">
+
+    <h2>Find Blood Donor</h2>
+
+    <label>Blood Group</label>
+
+    <select id="bloodGroup" name="blood_group">
+        <option value="">Select Blood Group</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+        <option>O+</option>
+        <option>O-</option>
+    </select>
+
+    <label>City / Area</label>
+
+    <input
+        type="text"
+        name="city"
+        id="area"
+        placeholder="Enter your city or area"
+    >
+
+    <button onclick="searchBlood()">
+        Search Donor
+    </button>
+
+    <div class="result" id="result">
+        <h3>Available Donor</h3>
+
+        <p><strong>Name:</strong> Sample Donor</p>
+        <p><strong>Blood Group:</strong> A+</p>
+        <p><strong>Area:</strong> Your Local Area</p>
+
+        <p>
+            This is sample data for the project.
+        </p>
+    </div>
+
+    <a class="back" href="index.html">
+        ← Back to Home
+    </a>
+
+</div>
+
+<script>
+
+function searchBlood() {
+
+    let bloodGroup = document.getElementById("bloodGroup").value;
+    let area = document.getElementById("area").value;
+
+    if (bloodGroup === "" || area === "") {
+
+        alert("Please select blood group and enter your area.");
+
+        return;
+    }
+    window.location.href = "search_donor.php?blood_group=" + encodeURIComponent(bloodGroup) + "&city=" + encodeURIComponent(area);
+
+}
+
+</script>
+
+</body>
+</html>

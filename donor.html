@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donor Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-color: #fff5f5;
+        }
+
+        header {
+            background-color: #b30000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+            color: #b30000;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 13px;
+            background-color: #b30000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #800000;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #b30000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🩸 Blood & Plasma Connect</h1>
+</header>
+
+<div class="container">
+
+    <h2>Donor Registration</h2>
+
+    <form action="save_donor.php" method="post">
+
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Enter your name">
+
+        <label>Age</label>
+        <input type="number" name="age" placeholder="Enter your age">
+
+        <label>Blood Group</label>
+        <select name="blood_group">
+            <option>Select Blood Group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+
+        <label>City / Area</label>
+        <input type="text" name="city" placeholder="Enter your city or area">
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="Enter phone number">
+
+        <button type="submit">Register as Donor</button>
+
+    </form>
+
+    <a class="back" href="index.html">← Back to Home</a>
+
+</div>
+
+</body>
+</html>
